@@ -62,11 +62,13 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Logo placeholder */}
+        {/* Logo */}
         <div className="mb-8 flex justify-center">
-          <div className="w-20 h-20 rounded-full border-2 border-sky-500/50 flex items-center justify-center bg-white/5 backdrop-blur">
-            <span className="text-2xl font-bold text-sky-400">CN</span>
-          </div>
+          <img
+            src="/logo-copa-naciones.png"
+            alt="Copa Naciones Pádel"
+            className="w-24 h-24 sm:w-32 sm:h-32 object-contain drop-shadow-lg"
+          />
         </div>
 
         <h1

@@ -25,9 +25,11 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <a href="#hero" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-full border border-sky-500/50 flex items-center justify-center">
-              <span className="text-sky-400 font-bold text-sm">CN</span>
-            </div>
+            <img
+              src="/logo-copa-naciones.png"
+              alt="Copa Naciones Pádel"
+              className="w-10 h-10 object-contain"
+            />
             <span className="text-white font-semibold hidden sm:inline">Copa Naciones</span>
           </a>
 
