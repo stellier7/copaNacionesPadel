@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const links = [
-  { href: '#registro', label: 'Registro' },
-  { href: '#patrocinadores', label: 'Patrocinadores' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: '/#registro', label: 'Registro' },
+  { href: '/#patrocinadores', label: 'Patrocinadores' },
+  { href: '/#contacto', label: 'Contacto' },
 ]
 
 export default function Nav() {
@@ -24,16 +25,24 @@ export default function Nav() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <a href="#hero" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img
               src="/logo-copa-naciones.png"
               alt="Copa Naciones Pádel"
               className="w-10 h-10 object-contain"
             />
             <span className="text-white font-semibold hidden sm:inline">Copa Naciones</span>
-          </a>
+          </Link>
 
-          <button
+          <div className="flex items-center gap-2">
+            <Link
+              to="/live"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-white/90 hover:text-white transition text-sm font-semibold"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+              Torneo en vivo
+            </Link>
+            <button
             className="p-2 text-white hover:text-sky-400 transition"
             onClick={() => setOpen(!open)}
             aria-label="Menu"
@@ -46,12 +55,21 @@ export default function Nav() {
               )}
             </svg>
           </button>
+          </div>
 
           <div
             className={`${
               open ? 'flex' : 'hidden'
             } absolute top-full left-0 right-0 flex-col gap-1 py-4 px-6 bg-black/95 backdrop-blur-md border-b border-white/5`}
           >
+            <Link
+              to="/live"
+              onClick={() => setOpen(false)}
+              className="py-2 text-white/90 hover:text-white transition font-semibold flex items-center gap-2 sm:hidden"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+              Torneo en vivo
+            </Link>
             {links.map(({ href, label }) => (
               <a
                 key={href}

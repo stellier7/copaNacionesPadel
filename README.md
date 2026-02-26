@@ -23,6 +23,25 @@ npm run dev
 npm run build
 ```
 
+## Torneo en vivo
+
+- **`/live`** – Lista de partidos en vivo y próximos
+- **`/live/:id`** – Detalle del partido con marcador y transmisión (YouTube/Instagram)
+- **`/admin`** – Panel de árbitros (login)
+- **`/admin/matches`** – Gestión de partidos y marcadores
+
+### Supabase (opcional)
+
+Para datos en tiempo real y panel de árbitros:
+
+1. Crea un proyecto en [supabase.com](https://supabase.com)
+2. Copia `.env.example` a `.env` y añade `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`
+3. Ejecuta el SQL en `supabase-schema.sql` en el editor SQL de Supabase
+4. Activa Realtime para la tabla `matches` (Database → Replication)
+5. Crea un usuario árbitro en Authentication
+
+Sin Supabase, la app usa datos de ejemplo.
+
 ## Secciones
 
 1. **Hero** – Título, CTA, countdown
